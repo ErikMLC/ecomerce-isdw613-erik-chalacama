@@ -8,17 +8,26 @@
         <style>
             
             h1 {
-                color: blue;
+                color: rgb(247, 165, 247);
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-style: italic;
+                font-weight: bold;
+            }
+
+            #productDetailsTitle{
+                border: 1px solid black;
             }
            
         </style>
     </head>
 
     <body>
-        <h1>Atari 2600</h1>
+        <h1 id="productName">Atari 2600</h1>
        
-        <img src="assets\images\atari2600.jpg" width="300px" />
-        <h2>Detalles </h2>
+        <img id="imgProduct" src="assets\images\atari2600.jpg" width="300px" />
+
+        <h2 id="productDetailsTitle">Detalles </h2>
+
         <p style="font-size: 11px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Phasellus mattis aliquam nunc, eu sollicitudin enim bibendum id. 
             Donec ornare gravida augue, pellentesque egestas nulla molestie sit amet. 
@@ -74,7 +83,7 @@
 
             <tr>
                 <td class="cell-header"> Condici&oacute;n:</td>
-                <td>Reaparado -Buen Estado</td>
+                <td>Reaparado - Buen Estado</td>
             </tr>
 
             <tr>
