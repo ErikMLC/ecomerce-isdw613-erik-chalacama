@@ -6,7 +6,7 @@
     <title>Acerca de...</title>
 
     <style>
-        .aplicaciones{
+        #titulo{
             font-weight: bold;
             font-size: 2em;
             /* 16px * 2em = 32 px*/
@@ -48,17 +48,118 @@
             
         }
 
+        table, td, tr, th {
+            border: 1px solid;
+            width: 100%;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        th{
+            height: 50px;
+            text-align: center;
+            color: azure;
+            vertical-align: middle;
+            background-color: #d24d6c;
+        }
+
+        td:hover{
+            /*padding-left: 10px;
+            padding-right: 20px;*/
+            padding: 15px;
+            color:#7fc8ff ;
+        }
+        tr:nth-child(even){
+            background-color:#ffceff;
+        }
+
+        tr:nth-child(odd){
+            background-color:rgb(230, 199, 202);
+        }
+
+        a:hover{
+            color: brown;
+        }
+        a:visited{
+            color: rgb(57, 240, 240);
+        }
+
+        a:link{
+            color: blueviolet;
+        }
+
+        span:first-child{
+          font-size: 2em;  
+        }
+
+        p::first-line{
+            color:#59baa9 ;
+        }
+        
+        .combinador>p {
+            background-color: beige;
+        }
+
+        a[target="_blank"]{
+            background-color:thistle;
+        }
     </style>
 </head>
 <body>
-    <p id="titulo" class="aplicaciones">Acerca de..</p>
+    <p id="titulo">Acerca de..</p>
     <!--ol>li*5{lista $}-->
 
     <p class="inicio">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus alias, dicta id error est recusandae harum deserunt, eligendi impedit provident reiciendis tempore quidem voluptatibus in distinctio. Tempore, quasi dolorem nihil expedita eius totam quidem sapiente magnam libero ex consequatur sit velit aspernatur, explicabo suscipit quis aut illum molestiae in aliquid consectetur maiores vitae! Nobis ipsam, doloremque sunt est necessitatibus quaerat cumque atque accusantium quae? At itaque aperiam optio nihil fugiat sapiente suscipit vero qui debitis. Soluta quos amet explicabo dolores a quia commodi, laudantium praesentium dolorem debitis necessitatibus quibusdam illo eligendi magni in assumenda! Porro voluptates alias sit. Inventore, quos?
     </p>
 
+    <div style="width:70%;">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Tel&eacute;fono</th>
+            </tr>
+            <tr>
+                <td>Andres Diaz</td>
+                <td>andres.diaz@epn.edu.ec</td>
+                <td>+593954736296</td>
+            </tr>
+            <tr>
+                <td>Ana Leon</td>
+                <td>ana.leon@epn.edu.ec</td>
+                <td>+593976348767</td>
+            </tr>
+            <tr>
+                <td>Ana Leon</td>
+                <td>ana.leon@epn.edu.ec</td>
+                <td>+593976348767</td>
+            </tr>
+            <tr>
+                <td>Ana Leon</td>
+                <td>ana.leon@epn.edu.ec</td>
+                <td>+593976348767</td>
+            </tr>
+    
+        </table>
+
+    </div>
+
+    <a href="https://es.wikipedia.org" target="_self"> 
+        Mis otros productos </a>
+    
+    <br>
+   <span>Primer Parrafo</span>
+   <span>Segundo Elemento</span>
+
+   <div class="combinador">
+    <p>Texto dentro de combinador</p>
+    <h1>Cabecera</h1>
+   </div>
 
 
 </body>
+
 </html>
