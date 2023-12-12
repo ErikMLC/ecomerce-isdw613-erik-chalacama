@@ -1,0 +1,36 @@
+.details {
+  background-color: #C3D8FC;
+  font-size: Helvetica, sans-serif;
+  color: rgb(190, 245, 252);
+  color: #F0694D;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid skyblue;
+}
+
+.container-header {
+  background-color: #C3D8FC;
+  font-size: 18px;
+  color: #7CC8FC;
+  color: #F0694D;
+  font-size: 35px;
+  font-weight: bold;
+  border: 1px solid skyblue;
+}
+
+.button-base, .button-report {
+  border: none;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.button-report {
+  background-color: rgb(200, 193, 247);
+}
+
+nav ul li a {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=mystyle.css.map */

@@ -1,0 +1,42 @@
+$myColor: #38ADEF; 
+$myFont: "Times New Roman";
+$myLetter: black;
+
+.breadcrumb-item a {
+text-decoration: none;
+font-size: 18px;
+color: $myColor;
+font-family: $myFont, sans-serif;
+font-weight: bold;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold; /* Hace que el texto sea más grueso o negrita */
+    text-decoration: underline; /* Subraya el texto */
+    font-size: 18px; /* Ajusta el tamaño de la letra */
+}
+
+h1 {
+    font-size: 2em; /* Tamaño de letra ajustable */
+    color: $myLetter; /* Color del texto */
+    text-align: center; /* Alineación del texto (puedes cambiar a "left", "right", "justify", etc.) */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-family: $myFont, sans-serif; /* Tipo de fuente (puedes cambiar a otras fuentes web) */
+    text-transform: uppercase; /* Convertir texto a mayúsculas (opcional) */
+}
+
+.table th, .table td {
+    text-align: center; /* Alinea el texto al centro */
+    padding: 10px; /* Añade espacio interno alrededor del contenido de las celdas */
+}
+
+.table th {
+    background-color: #007bff; /* Color de fondo para los encabezados de columna */
+    color: white; /* Color del texto en los encabezados de columna */
+    font-family: $myFont, sans-serif;
+}
+
+.table td {
+    border: 1px solid #dee2e6; /* Añade un borde a las celdas */
+    font-family: $myFont, sans-serif;
+}
