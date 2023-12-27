@@ -149,5 +149,26 @@
             </table>
         </div>
     
+        <script>
+            function traverseDOM(nodo){
+                var childNodes= nodo.childNodes;
+    
+                childNodes.forEach(element=>{
+                    console.log("=====================================");
+                    console.log("Nodo: "+ element.nodeName + ", Tipo: " + element.nodeType + ",Valor: " + element.nodeValue);
+                    console.log("Nodo padre: " + element.parentNode);
+    
+                    if(element.hasChildNodes){
+                        traverseDOM(element);
+                    }
+                });
+                
+                /*for(var i=0; i<childNodes.length; i++){}
+                */
+            }
+            traverseDOM(document.body)
+        </script>
+
     </body>
+   
 </html>

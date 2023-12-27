@@ -56,31 +56,126 @@
     </style>
 </head>
 
-<body class="container mt-5">
+<body onload="pageInitialize();" class="container mt-5">
 
     <h1>Contáctenos</h1>
 
-    <form>
+    <form method="post" action="/processForm.html" onsubmit=" return validateForm();">
         <div class="form-group">
             <label for="nombre" class="mb-3">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+            <input  type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" onchange="changeInput();" required />
+        </div>
+
+        <div class="form-group">
+            <label for="age" class="mb-3">Edad</label>
+            <input  type="number" class="form-control" id="age" name="age" placeholder="Ingrese su edad" >
         </div>
 
         <div class="form-group">
             <label for="email" class="mb-3">Email</label>
             <br>
-            <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+            <input  type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email" onkeydown="OnKeyDownEvent();">
         </div>
 
         <div class="form-group">
             <label for="comentario" class="mb-3">Comentario</label>
-            <textarea class="form-control" id="comentario" rows="5" placeholder="Ingrese su comentario"></textarea>
+            <textarea class="form-control" id="comentario" name="comentario" rows="5" placeholder="Ingrese su comentario"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <div class="form-group">
+            <label >Systemas Operativos</label>
+            <input type="checkbox" id="windows" name="os" value="Windows"></textarea>
+            <label for="windows">Windows</label>
+
+            <input type="checkbox" id="macos" name="os" value="Macos"></textarea>
+            <label for="macos">Macos</label>
+
+            <input type="checkbox" id="linux" name="os" value="Linux"></textarea>
+            <label for="linux">Linux</label>
+
+            <br />
+
+            <label > Metodo de pagop</label>
+            <input type="radio" id="creditcard" name="paymentMethod" value="creditcard">
+            <label for="creditcard"> Tarjeta de cr&eacute;dito</label>
+
+            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+            <label for="paypal"> Paypal</label>
+
+            <input type="radio" id="bitcoin" name="paymentMethod" value="bitcoin">
+            <label for="bitcoin"> Bitcoin</label>
+
+            <br />
+            <label for="deliveryAddress"> Direccion de Entrega</label>
+            <select id="deliveryAddress">
+                <option> Casa</option>
+                <option> Oficina</option>
+                <option> Otro</option>
+            </select>
+
+            <br />
+
+            <label for="clave">Clave</label>
+            <input id="clave" type="password" placeholder="Ingrese la clave">
+
+            <br />
+
+            <label for="invoice">Factura</label>
+            <input id="invoice" type="file" >
+
+        </div>
+
+        <input type="submit" value="Enviar">
 
     </form>
 
+    <button onclick="agregarParrafo();" type="submit" class="btn btn-primary">Agregar Parrafo</button>
+    <button onclick="this.innerHTML= Date();" type="submit" class="btn btn-primary">Click ME</button>
+    <br />
+    <img onmouseover="changeStyle(this, '300px'); changeImage(this, 'V')" 
+     onmouseout="changeStyle(this, '200px'); changeImage(this,'assets/images/' )"  
+     src="assets/images/casa.jpg" width="200px" />
+
+
+   <script>
+    
+    function validateForm(){
+        var inputName= document.getElementById("name");
+        if(inputName == ''){
+            return false; 
+        }
+        
+        if(isNaN()){
+
+        }
+        return true;
+    }
+
+    function changeImage(element, imagesrc){
+        element.src=imagesrc;
+    }
+
+    function changeStyle(element, newsize){
+        element.style.width = newsize;
+        //element.style['background-color'] = "red";
+    }
+
+    function agregarParrafo(){
+    var parrafo = document.createElement("p");
+    var texto= document.createTextNode("Este parrafo fue creado dinamicamente");
+    parrafo.appendChild(texto);
+    document.body.appendChild(parrafo);
+    }
+
+    function pageInitialize(){
+        console.log("pageInitializate ...");
+    }
+
+    function changeInput(){
+        console.log("changeInput....");
+    }
+
+   </script>
    
 </body>
 
