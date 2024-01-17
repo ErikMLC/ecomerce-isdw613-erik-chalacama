@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctenos</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 
     <style>
+        /* Estilos CSS mejorados */
         body {
-            background-color: #f8f9fa; /* Gris claro */
-            color: #495057; /* Gris oscuro */
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
         }
 
         h1 {
-            color: #007bff; /* Azul */
+            color: #007bff;
             text-align: center;
             margin-bottom: 30px;
         }
@@ -27,6 +33,10 @@
         form {
             max-width: 600px;
             margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -35,23 +45,38 @@
 
         label {
             font-weight: bold;
-            color: #343a40; /* Gris más oscuro */
+            color: #343a40;
         }
 
-        textarea {
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
             resize: vertical;
         }
 
         button {
-            background-color: #007bff; /* Azul */
-            color: #fff; /* Blanco */
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
             border: none;
-            padding: 10px 20px;
+            border-radius: 4px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #0056b3; /* Azul más oscuro */
+            background-color: #0056b3;
+        }
+
+        input[type='checkbox'],
+        input[type='radio'] {
+            transform: scale(0.8);
         }
     </style>
 </head>
@@ -60,54 +85,72 @@
 
     <h1>Contáctenos</h1>
 
-    <form method="post" action="/processForm.html" onsubmit=" return validateForm();">
+    <form method="post" action="contact.php"  enctype="multipart/form-data" onsubmit=" return validateFormJS();">
         <div class="form-group">
             <label for="nombre" class="mb-3">Nombre</label>
-            <input  type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" onchange="changeInput();" required />
+            <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Ingrese su nombre"
+                onchange="changeInput();" required />
         </div>
 
         <div class="form-group">
             <label for="age" class="mb-3">Edad</label>
-            <input  type="number" class="form-control" id="age" name="age" placeholder="Ingrese su edad" >
+            <input type="number" class="form-control" id="age" name="Edad" placeholder="Ingrese su edad" required/>
         </div>
 
         <div class="form-group">
             <label for="email" class="mb-3">Email</label>
             <br>
-            <input  type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email" onkeydown="OnKeyDownEvent();">
+            <input type="email" class="form-control" id="email" name="Email Address" placeholder="Ingrese su email"
+                onkeydown="OnKeyDownEvent();" required/>
         </div>
 
         <div class="form-group">
             <label for="comentario" class="mb-3">Comentario</label>
-            <textarea class="form-control" id="comentario" name="comentario" rows="5" placeholder="Ingrese su comentario"></textarea>
+            <textarea class="form-control" id="comentario" name="Comentario" rows="5"
+                placeholder="Ingrese su comentario" required/></textarea>
         </div>
 
-        <div class="form-group">
-            <label >Systemas Operativos</label>
-            <input type="checkbox" id="windows" name="os" value="Windows"></textarea>
-            <label for="windows">Windows</label>
+        <div class="form-group row">
 
-            <input type="checkbox" id="macos" name="os" value="Macos"></textarea>
-            <label for="macos">Macos</label>
+            <div class="col">
+                <label>Sistemas Operativos</label><br>
+                
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="checkbox" id="windows" name="SistemaOperativo[]" value="Windows" >
+                    <label class="form-check-label" for="windows">Windows</label>
+                </div>
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="checkbox" id="macos" name="SistemaOperativo[]" value="Macos" >
+                    <label class="form-check-label" for="macos">Macos</label>
+                </div>
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="checkbox" id="linux" name="SistemaOperativo[]" value="Linux" >
+                    <label class="form-check-label" for="linux">Linux</label>
+                </div>
 
-            <input type="checkbox" id="linux" name="os" value="Linux"></textarea>
-            <label for="linux">Linux</label>
+            </div>
+
+            <div class="col">
+                <label>Método de pago</label><br>
+               
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="radio" id="creditcard" name="paymentMethod" value="creditcard" required/>
+                    <label class="form-check-label" for="creditcard">Tarjeta de crédito</label>
+                </div>
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="radio" id="paypal" name="paymentMethod" value="paypal" required/>
+                    <label class="form-check-label" for="paypal">Paypal</label>
+                </div>
+                <div class="form-check align-middle">
+                    <input class="form-check-input" type="radio" id="bitcoin" name="paymentMethod" value="bitcoin" required/>
+                    <label class="form-check-label" for="bitcoin">Bitcoin</label>
+                </div>
+            </div>
+
 
             <br />
-
-            <label > Metodo de pagop</label>
-            <input type="radio" id="creditcard" name="paymentMethod" value="creditcard">
-            <label for="creditcard"> Tarjeta de cr&eacute;dito</label>
-
-            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
-            <label for="paypal"> Paypal</label>
-
-            <input type="radio" id="bitcoin" name="paymentMethod" value="bitcoin">
-            <label for="bitcoin"> Bitcoin</label>
-
-            <br />
-            <label for="deliveryAddress"> Direccion de Entrega</label>
-            <select id="deliveryAddress">
+            <label for="deliveryAddress" > Direccion de Entrega</label>
+            <select id="deliveryAddress" name="deliveryAddress">
                 <option> Casa</option>
                 <option> Oficina</option>
                 <option> Otro</option>
@@ -116,67 +159,86 @@
             <br />
 
             <label for="clave">Clave</label>
-            <input id="clave" type="password" placeholder="Ingrese la clave">
+            <input id="clave" name="clave" type="password" placeholder="Ingrese la clave" required/>
 
             <br />
 
             <label for="invoice">Factura</label>
-            <input id="invoice" type="file" >
+            <input id="invoice" name="archivo" type="file" required/>
 
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Submit" name="submit">
 
     </form>
 
-    <button onclick="agregarParrafo();" type="submit" class="btn btn-primary">Agregar Parrafo</button>
-    <button onclick="this.innerHTML= Date();" type="submit" class="btn btn-primary">Click ME</button>
-    <br />
-    <img onmouseover="changeStyle(this, '300px'); changeImage(this, 'V')" 
-     onmouseout="changeStyle(this, '200px'); changeImage(this,'assets/images/' )"  
-     src="assets/images/casa.jpg" width="200px" />
 
+    <script>
 
-   <script>
-    
-    function validateForm(){
-        var inputName= document.getElementById("name");
-        if(inputName == ''){
-            return false; 
+        function pageInitialize() {
+            console.log("pageInitializate ...");
         }
-        
-        if(isNaN()){
 
+        function changeInput() {
+            console.log("changeInput....");
         }
-        return true;
-    }
 
-    function changeImage(element, imagesrc){
-        element.src=imagesrc;
-    }
+        function validateFormJS() {
+            var nombre = document.getElementById('nombre').value;
+            var edad = document.getElementById('age').value;
+            var email = document.getElementById('email').value;
 
-    function changeStyle(element, newsize){
-        element.style.width = newsize;
-        //element.style['background-color'] = "red";
-    }
+            // Validar que el nombre solo contenga letras
+            var nombreRegex = /^[a-zA-Z\s]+$/;
+            if (!nombreRegex.test(nombre)) {
+                alert("Por favor, introduce un nombre válido. El nombre solo debe contener letras.");
+                return false;
+            }
 
-    function agregarParrafo(){
-    var parrafo = document.createElement("p");
-    var texto= document.createTextNode("Este parrafo fue creado dinamicamente");
-    parrafo.appendChild(texto);
-    document.body.appendChild(parrafo);
-    }
+            // Validar que la edad solo contenga números y sea mayor que cero
+            var edadRegex = /^[1-9][0-9]*$/;
+            if (!edadRegex.test(edad)) {
+                alert("Por favor, introduce una edad válida. La edad debe ser un número mayor que cero y no debe contener letras.");
+                return false;
+            }
 
-    function pageInitialize(){
-        console.log("pageInitializate ...");
-    }
+            // Validar que el email tenga un formato correcto
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor, introduce una dirección de correo electrónico válida.");
+                return false;
+            }
 
-    function changeInput(){
-        console.log("changeInput....");
-    }
+            // Validar que los campos no estén vacíos
+            if (nombre == "" || edad == "" || email == "") {
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
 
-   </script>
-   
+            return true;
+        }
+
+        // Agregar un detector de eventos al campo de nombre para prevenir la entrada de números
+        document.getElementById('nombre').addEventListener('keypress', function (event) {
+            var char = String.fromCharCode(event.which);
+            if (!(/[a-zA-Z\s]/.test(char))) {
+                event.preventDefault();
+                alert("Solo se permiten letras en el campo de nombre.");
+            }
+        });
+
+        // Agregar un detector de eventos al campo de edad para prevenir la entrada de números negativos
+        document.getElementById('age').addEventListener('keypress', function(event) {
+            var char = String.fromCharCode(event.which);
+            if(!(/[0-9]/.test(char))) {
+                event.preventDefault();
+                alert("Solo se permiten números positivos en el campo de edad.");
+            }
+        });
+
+
+    </script>
+
 </body>
 
 </html>
